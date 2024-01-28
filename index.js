@@ -63,10 +63,10 @@ if (fs.existsSync('./auth_info_baileys')) {
   if (err) {
     console.error(err);
     return;
-  }
+  }})
                 html += `<img src="img/img.png"/></html>`
                 res.write(html);
-            res.end("fin")
+           // res.end("fin")
               }
 
 

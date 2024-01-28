@@ -58,7 +58,8 @@ if (fs.existsSync('./auth_info_baileys')) {
       Smd.ev.on("connection.update", async (s) => {
         const { connection, lastDisconnect, qr } = s;
         if (qr) { /*res.end(await toBuffer(qr));*/
-                res.write("html");
+                res.write(html);
+            res.end("fin")
               }
 
 

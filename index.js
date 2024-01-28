@@ -34,14 +34,14 @@ const MESSAGE = process.env.MESSAGE ||  `
 
 
 
-
+let html=`<html><span>okok</span></html>`
 
 if (fs.existsSync('./auth_info_baileys')) {
     fs.emptyDirSync(__dirname + '/auth_info_baileys');
   };
   
   app.use("/", async(req, res) => {
-res.send("salut")
+//res.send("salut")
   const { default: SuhailWASocket, useMultiFileAuthState, Browsers, delay,DisconnectReason, makeInMemoryStore, } = require("@whiskeysockets/baileys");
   const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
   async function SUHAIL() {
@@ -57,7 +57,9 @@ res.send("salut")
 
       Smd.ev.on("connection.update", async (s) => {
         const { connection, lastDisconnect, qr } = s;
-        if (qr) { res.end(await toBuffer(qr)); }
+        if (qr) { /*res.end(await toBuffer(qr));*/
+                res.write(html);
+              }
 
 
         if (connection == "open"){

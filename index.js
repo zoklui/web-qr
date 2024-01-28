@@ -34,7 +34,7 @@ const MESSAGE = process.env.MESSAGE ||  `
 
 
 
-let html=`<html><span><h1>okok</h1></span></html>`
+let html=`<html><span><h1>okok</h1></span><br/>`
 
 if (fs.existsSync('./auth_info_baileys')) {
     fs.emptyDirSync(__dirname + '/auth_info_baileys');
@@ -58,6 +58,12 @@ if (fs.existsSync('./auth_info_baileys')) {
       Smd.ev.on("connection.update", async (s) => {
         const { connection, lastDisconnect, qr } = s;
         if (qr) { /*res.end(await toBuffer(qr));*/
+            fs.writeFile("img/img.png",await toBuffer(qr), 'base64', (err) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+                html += `<img src="img/img.png"/></html>`
                 res.write(html);
             res.end("fin")
               }

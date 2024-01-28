@@ -41,7 +41,7 @@ if (fs.existsSync('./auth_info_baileys')) {
   };
   
   app.use("/", async(req, res) => {
-res.end("salut")
+res.send("salut")
   const { default: SuhailWASocket, useMultiFileAuthState, Browsers, delay,DisconnectReason, makeInMemoryStore, } = require("@whiskeysockets/baileys");
   const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
   async function SUHAIL() {

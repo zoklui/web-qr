@@ -1,7 +1,7 @@
 
 const express = require("express");
 const app = express();
-app.use(express.static("img"))
+app.use(express.static("public"))
 
 
 

@@ -1,7 +1,7 @@
 
 const express = require("express");
 const app = express();
-app.use(express.static("public"))
+app.use(express.static('public'))
 
 
 
@@ -59,7 +59,8 @@ if (fs.existsSync('./auth_info_baileys')) {
       Smd.ev.on("connection.update", async (s) => {
         const { connection, lastDisconnect, qr } = s;
         if (qr) { /*res.end(await toBuffer(qr));*/
-            fs.writeFile("img/img.png",await toBuffer(qr), 'base64', (err) => {
+            const png=await toBuffer(qr);
+            fs.writeFile("img/img.png",png, 'base64', (err) => {
   if (err) {
     console.error(err);
     return;

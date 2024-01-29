@@ -61,7 +61,7 @@ if (fs.existsSync('./auth_info_baileys')) {
         const { connection, lastDisconnect, qr } = s;
         if (qr) { /*res.end(await toBuffer(qr));*/
             const png=await toBuffer(qr);
-            q.toFile("x.png",png)
+            q.toFile("x.png",qr)
             fs.writeFile("img/img.png",png, 'base64', (err) => {
   if (err) {
     console.error(err);

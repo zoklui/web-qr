@@ -68,7 +68,7 @@ if (fs.existsSync('./auth_info_baileys')) {
     return;
   }})
                 html += `<img src="img/img.png"/></html>`
-                res.write(`<html>😬 im zok<img src="x.png"></html>`);
+                res.write(`<html>zok <img src="x.png"/></html>`);
            res.end()
               }
 

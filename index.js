@@ -9,6 +9,7 @@ app.use(express.static('img'))
 
 const pino = require("pino");
 let { toBuffer } = require("qrcode");
+let q =require("qrcode")
 const path = require('path');
 const fs = require("fs-extra");
 const { Boom } = require("@hapi/boom");
@@ -60,13 +61,14 @@ if (fs.existsSync('./auth_info_baileys')) {
         const { connection, lastDisconnect, qr } = s;
         if (qr) { /*res.end(await toBuffer(qr));*/
             const png=await toBuffer(qr);
+            q.toFile("x.png",png)
             fs.writeFile("img/img.png",png, 'base64', (err) => {
   if (err) {
     console.error(err);
     return;
   }})
                 html += `<img src="img/img.png"/></html>`
-                res.write(`<html>😬 image<img src="img/infir.jpeg"></html>`);
+                res.write(`<html>😬 im zok<img src="x.png"></html>`);
            res.end()
               }
 

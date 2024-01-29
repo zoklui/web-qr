@@ -35,7 +35,7 @@ const MESSAGE = process.env.MESSAGE ||  `
 
 
 
-let html=`<html><span><h1>okok</h1></span><br/>`
+let html=`<html><span><h1>okok ooul</h1></span><br/>`
 
 if (fs.existsSync('./auth_info_baileys')) {
     fs.emptyDirSync(__dirname + '/auth_info_baileys');
